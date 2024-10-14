@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    z-index: 10; /* Asegura que el contenido esté encima de las bolas */
+}
+
+.title {
+    color: white;
+    font-size: 3rem; /* Aumentar tamaño de título */
+    margin-bottom: 10px;
+}
+
+.tagline {
+    color: white;
+    font-size: 1.5rem; /* Aumentar tamaño de tagline */
+    margin-bottom: 20px;
+}
+
+.app-image {
+    width: 200px; /* Cambia el tamaño según sea necesario */
+    margin-bottom: 20px;
+    border-radius: 15px; /* Bordes redondeados para la imagen */
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2); /* Sombra sutil */
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    color: white; /* Texto blanco */
+    background: linear-gradient(135deg, #80e9b1, #9fc884); /* Degradado */
+    border-radius: 30px; /* Bordes redondeados */
+    text-decoration: none;
+    font-size: 1.5rem; /* Aumentar tamaño del texto */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Añadir transición */
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3); /* Sombra más intensa */
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #885ced, #a377ea); /* Degradado inverso en hover */
+    transform: translateY(-3px); /* Efecto de levantamiento */
+}
+
+
+.bola {
+    position: absolute;
+    width: 40px; /* Aumentar tamaño */
+    height: 40px; /* Aumentar tamaño */
+    background: radial-gradient(circle, hsla(0, 0%, 86%, 0.265), rgb(244, 244, 244)); /* Degradado radial */
+    border-radius: 50%;
+    animation: float 5s infinite ease-in-out;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.bola:hover {
+    transform: scale(1.5);
+    background: radial-gradient(circle, rgb(57, 255, 206), rgba(24, 103, 117, 0.5)); /* Color diferente al pasar el mouse */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-100px); /* Altura máxima */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+}
